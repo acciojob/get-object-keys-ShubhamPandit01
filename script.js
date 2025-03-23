@@ -1,25 +1,35 @@
 // Create the student object
 const student = {
   name: "John",
+  getKeys: function () {
+    return Object.keys(this);
+  }
 };
 
-// Function to get all keys from the object
-function getKeys(obj) {
-  return Object.keys(obj);
-}
-
 // Example Test Cases
-console.log(getKeys(student)); // Output: ["name"]
+console.log(student.getKeys()); // Output: ["name"]
 
 const studentWithMoreProps = {
   name: "John",
   age: 20,
-  city: "New York"
+  city: "New York",
+  getKeys: function () {
+    return Object.keys(this);
+  }
 };
-console.log(getKeys(studentWithMoreProps)); // Output: ["name", "age", "city"]
+console.log(studentWithMoreProps.getKeys()); // Output: ["name", "age", "city"]
 
-const emptyObject = {};
-console.log(getKeys(emptyObject)); // Output: []
+const emptyObject = {
+  getKeys: function () {
+    return Object.keys(this);
+  }
+};
+console.log(emptyObject.getKeys()); // Output: []
 
-const singleProperty = { hobby: "Reading" };
-console.log(getKeys(singleProperty)); // Output: ["hobby"]
+const singleProperty = {
+  hobby: "Reading",
+  getKeys: function () {
+    return Object.keys(this);
+  }
+};
+console.log(singleProperty.getKeys()); // Output: ["hobby"]
